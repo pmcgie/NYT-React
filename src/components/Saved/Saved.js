@@ -1,8 +1,7 @@
 import React from "react";
 
-const Search = props =>
+const Saved = props =>
   <div className="container">
   </div>
 
-
-export default Search;
+export default Saved;

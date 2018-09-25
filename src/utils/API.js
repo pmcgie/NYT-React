@@ -18,7 +18,7 @@ export default {
     return axios.post("/api/saved", newArticle);
   },
   
-  getSavedArticle: function() {
+  getSavedArticles: function() {
     return axios.get("/api/saved");
   },
   
@@ -28,4 +28,4 @@ export default {
 
 };
 
-module.exports = API;
+// export default API;
