@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import Saved from "./Saved";
-import Search from "./Search";
-import Results from "./Results";
+import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 
 class Main extends Component {
@@ -23,36 +21,6 @@ class Main extends Component {
           .then((res) => {
               this.setState({saved: res.data})
           });
-    }
-
-    // All queried API Articles with Data & Format
-    renderArticles = () => {
-        return this.state.articles.map(article => (
-            // <Results
-            //     _id={article._id}
-            //     key={article._id}
-            //     title={article.headline.main}
-            //     date={article.pub_date}
-            //     url={article.web_url}
-            //     handleSaveButton={this.handleSaveButton}
-            //     getSavedArticles={this.getSavedArticles}
-            // />
-        ))
-    }
-
-    // All Saved Articles with Data & Format
-    renderSaved = () => {
-        return this.state.saved.map(save => (
-            <Saved
-            _id={save._id}
-            key={save._id}
-            title={save.title}
-            date={save.date}
-            url={save.url}
-            handleDeleteButton={this.handleDeleteButton}
-            getSavedArticles={this.getSavedArticles}
-            />
-        ))
     }
 
 
@@ -93,16 +61,17 @@ class Main extends Component {
             .then(this.getSavedArticles())
     }
 
-
-    // dInitial Page
+    // Initial Page
     render() {
         return (
-
-            <div className="jumbotron">
-            <h1 className="Title"><strong>New York Times Article Search</strong></h1>
-            <h2 className="Subtitle">Search for and save articles of interest.</h2>
-            </div>
-    
+            <Jumbotron>
+              <h1 className="text-center">
+                <strong>New York Times Article Scrubber</strong>
+              </h1>
+              <h2 className="text-center">
+                Search for and save articles of interest.
+              </h2>
+            </Jumbotron>
         );
     }
 
