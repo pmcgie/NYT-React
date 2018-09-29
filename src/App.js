@@ -3,14 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import Main from "./Sections/Main";
 
-// const App = () => (<Router>
-//     <div>
-//       <Switch>
-//         <Route path="/" component={Main} />
-//       </Switch>
-//     </div>
-//   </Router>);
-
 class App extends React.Component {
   render() {
     return (

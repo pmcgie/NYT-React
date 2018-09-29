@@ -1,13 +1,24 @@
-.jumbotron {
-    background-image: url("../../Images/newspaperbackground.png");
+@import url(https://fonts.googleapis.com/css?family=Notable);
+
+.jumbo {
+    background-color: black;
     background-size: 100%;
     position: relative; 
-    top: 0; 
-    padding-top: 10px;
+    margin: -20px 0px 20px 0px; 
+    padding: 10px 0px 10px 0px;
     text-align: center;
-    color: rgb(49, 71, 90);
+    color: rgb(49, 60, 90);
 }
 
-.jumbotron h1 {
+.jumbo h1 {
+    padding: 20px 0px 20px 0px;
     font-size: 60px;
+    background-color: rgb(229, 232, 235);
+    font-family: 'Notable', sans-serif;;
+}
+
+.jumbo h2 {
+    font-family: cursive;
+    color:  whitesmoke;
+    font-size: 25px;
 }
