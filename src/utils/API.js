@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default {
+const api = {
   
   getArticles: function(topic, startYear, endYear) {
     
@@ -29,3 +29,5 @@ export default {
   }
 
 };
+
+export default api;

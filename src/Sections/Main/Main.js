@@ -50,25 +50,20 @@ class Main extends Component {
 
     // When the search form submits, perform NYT api search with user input
     handleFormSubmit = (event) => {
-        event.preventDefault();
-        console.log("Getting NYT Articles");
-        console.log("this.state.topic: ", this.state.topic);
-        console.log("this.state.startYear: ", this.state.startYear);
-        console.log("this.state.endYear: ", this.state.endYear);
+        event.preventDefault();;
         API.getArticles(this.state.topic, this.state.startYear, this.state.endYear)
         .then((res) => {
-            console.log(res);
             this.setState({ articles: res.data.response.docs });
-            console.log("this.state.articles: ", this.state.articles);
         });
     }
 
     // Saved article's button from API NYT Search
-    handleSaveButton = (id) => {
-        const findArticle = this.state.articles.find((element) => element._id === id);
-        const newArticle = {title: findArticle.headline.main,date: findArticle.pub_date, url: findArticle.web_url};
-        API.saveArticle(newArticle)
-            .then(this.getSavedArticles())
+    handleSaveButton = id => {
+        const findArticleByID = this.state.articles.find((el) => el._id === id);
+        console.log("findArticleByID: ", findArticleByID);
+        const newSave = {title: findArticleByID.headline.main, date: findArticleByID.pub_date, url: findArticleByID.web_url};
+        API.saveArticle(newSave)
+        .then(this.getSavedArticles());
     }
 
     // Delete specific ID upon which is selected
@@ -125,8 +120,12 @@ class Main extends Component {
             handleEndYearChange={this.handleEndYearChange}
             handleFormSubmit={this.handleFormSubmit}
             renderArticles={this.renderArticles}
-          />
-            <Results></Results>
+            />
+            <div className="panel-body">
+            <ul className="list-group">
+                {this.renderSaved()}
+            </ul>
+            </div>
             <Footer></Footer>
             </div>
         );
