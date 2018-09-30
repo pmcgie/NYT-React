@@ -1,4 +1,4 @@
-const db = require("../models/Articles");
+const db = require("../models");
 
 //Mongoose Queries
 module.exports = {

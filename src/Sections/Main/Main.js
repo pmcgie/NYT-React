@@ -59,11 +59,8 @@ class Main extends Component {
 
     // Saved article's button from API NYT Search
     handleSaveButton = id => {
-        const findArticleByID = this.state.articles.find((el) => el._id === id);
-        console.log("findArticleByID: ", findArticleByID);
-        const newSave = {title: findArticleByID.headline.main, date: findArticleByID.pub_date, url: findArticleByID.web_url};
-        API.saveArticle(newSave)
-        .then(this.getSavedArticles());
+        const article = this.state.articles.find(article => article._id === id);
+        API.saveArticle(article).then(res => this.getArticles());
     }
 
     // Delete specific ID upon which is selected
