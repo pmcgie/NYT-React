@@ -10,9 +10,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('*', (req, res) => {
-  res.json('stopping here')
-})
+// app.get('*', (req, res) => {
+//   res.json('stopping here')
+// })
 // Serve static content
 app.use(express.static('client/build'));
 
