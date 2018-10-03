@@ -5,13 +5,14 @@ const mongoose = require("mongoose");
 const routes = require("./routes")
 const app = express();
 
-app.get('*', (req, res) => {
-  res.json('stopping here')
-})
+
 // Body Parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.get('*', (req, res) => {
+  res.json('stopping here')
+})
 // Serve static content
 app.use(express.static('client/build'));
 
