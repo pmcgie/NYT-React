@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Serve static content
-app.use(express.static(path.join(__dirname, './client/build')));
+app.use(express.static('client/build'));
 
 // Using routes
 app.use(routes);
