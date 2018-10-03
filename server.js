@@ -14,7 +14,7 @@ app.get('*', (req, res) => {
   res.json('stopping here')
 })
 // Serve static content
-app.use(express.static('client/build/index.html'));
+app.use(express.static('./client/build/index.html'));
 
 // Using routes
 app.use(routes);
