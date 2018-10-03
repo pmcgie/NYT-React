@@ -1,5 +1,5 @@
 const db = require("../models");
-
+const fs = require('fs');
 //Mongoose Queries
 module.exports = {
   findAll: function(req, res) {

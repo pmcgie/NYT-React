@@ -56,6 +56,15 @@ const Search = props =>
       </div>
     </div>
     <br/><br/>
+
+
+    <div className="panel-heading">
+        <h3 className="panel-title">
+          <strong>
+            Saved Items
+          </strong>
+        </h3>
+    </div>
 </div>
 
 

@@ -60,7 +60,8 @@ class Main extends Component {
     // Saved article's button from API NYT Search
     handleSaveButton = id => {
         const article = this.state.articles.find(article => article._id === id);
-        API.saveArticle(article).then(res => this.getArticles());
+        const parsedArticle = {title: article.headline.main, date: article.pub_date, url: article.web_url }
+        API.saveArticle(parsedArticle).then(res => this.getSavedArticles());
     }
 
     // Delete specific ID upon which is selected
@@ -118,6 +119,7 @@ class Main extends Component {
             handleFormSubmit={this.handleFormSubmit}
             renderArticles={this.renderArticles}
             />
+            <br></br>
             <div className="panel-body">
             <ul className="list-group">
                 {this.renderSaved()}

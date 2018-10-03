@@ -17,15 +17,15 @@ const api = {
   },
 
   saveArticle: function(newArticle) {
-    return axios.post("/api/saved", newArticle);
+    return axios.post("/api/articles", newArticle);
   },
   
   getSavedArticles: function() {
-    return axios.get("/api/saved");
+    return axios.get("/api/articles");
   },
   
   deleteArticle: function(ID) {
-    return axios.delete("/api/saved/" + ID);
+    return axios.delete("/api/articles/" + ID);
   }
 
 };
