@@ -18,6 +18,10 @@ app.use(express.static('client/build'));
 // Using routes
 app.use(routes);
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
 // Promises with Mongoose
 mongoose.Promise = Promise;
 
