@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "server": "node server.js",
-    "client": "cd client && npm run start",
+    "client": "cd client && npm start",
     "start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"npm run client\"",
     "build": "cd client && npm run build",
     "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
@@ -22,5 +22,5 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "mongoose": "^4.11.10"
-  }
+   }
 }
