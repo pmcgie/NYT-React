@@ -1,26 +1,24 @@
 {
-  "name": "nyt_temp",
+  "name": "nyt-react",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "server": "node server.js",
-    "client": "cd client && npm start",
-    "start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"npm run client\"",
-    "build": "cd client && npm run build",
-    "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "client": "node scripts/start-client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "node scripts/build.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^3.6.1",
-    "nodemon": "^1.18.4"
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.12.1"
   },
   "dependencies": {
-    "bluebird": "^3.5.0",
-    "body-parser": "^1.17.2",
-    "express": "^4.15.4",
-    "mongoose": "^4.11.10"
-   }
+    "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.3"
+  }
 }
