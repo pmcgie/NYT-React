@@ -13,9 +13,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 // Serve static content
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+app.use(express.static('client/build'));
+
+// Using routes
+app.use(routes);
 
 // Promises with Mongoose
 mongoose.Promise = Promise;
@@ -25,15 +26,11 @@ mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost:27017/NYT-React"
 );
 
-// Using routes
-app.use(routes);
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
-
 // Start Server
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, function() {
   console.log("Server now listening to PORT");
 });
+
+
+// "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",

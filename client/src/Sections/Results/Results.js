@@ -11,7 +11,6 @@ const Results = props =>
     <li className="list-group-item">
       <h4>
         <span>
-          Saved
           <em>{props.title}</em>
         </span>
         <span className="btn-group pull-right">
