@@ -13,14 +13,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 // Serve static content
-app.use(express.static('client/build'));
-
-// Using routes
-app.use(routes);
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 // Promises with Mongoose
 mongoose.Promise = Promise;
@@ -29,6 +24,13 @@ mongoose.Promise = Promise;
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost:27017/NYT-React"
 );
+
+// Using routes
+app.use(routes);
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 // Start Server
 const PORT = process.env.PORT || 3000;
