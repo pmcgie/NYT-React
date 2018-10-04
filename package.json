@@ -1,24 +1,17 @@
 {
-  "name": "nyt-react",
+  "name": "nyt_temp",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "server": "node server.js",
-    "client": "node scripts/start-client.js",
-    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
-    "build": "node scripts/build.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^3.5.0",
-    "nodemon": "^1.12.1"
-  },
   "dependencies": {
-    "axios": "^0.17.1",
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "mongoose": "^4.13.3"
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.3.1"
   }
 }
